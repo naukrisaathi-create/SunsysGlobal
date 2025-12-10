@@ -1,0 +1,158 @@
+.custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow effect on hover */
+.custom-button::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(135deg, #7C3AED, #7C3AED, #06B6D4, #7C3AED);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.custom-button:hover::before {
+    opacity: 1;
+    animation: borderRotate 3s linear infinite;
+}
+
+/* Arrow icon animation */
+.custom-button::after {
+    content: '→';
+    position: absolute;
+    right: 1rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.custom-button--primary:hover::after,
+.custom-button--secondary:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Variants */
+.custom-button--primary {
+    background: linear-gradient(135deg, #7C3AED 0%, #7C3AED 100%);
+    color: white;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+    padding-right: 2.5rem;
+}
+
+.custom-button--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5), 0 0 30px rgba(124, 58, 237, 0.3);
+}
+
+.custom-button--primary:active {
+    transform: translateY(0);
+}
+
+.custom-button--secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-dark), var(--bg-dark)),
+        linear-gradient(135deg, #7C3AED, #7C3AED);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding-right: 2.5rem;
+}
+
+.custom-button--secondary:hover {
+    background-image: linear-gradient(135deg, #7C3AED 0%, #7C3AED 100%),
+        linear-gradient(135deg, #7C3AED, #7C3AED);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+}
+
+.custom-button--outline {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid var(--text-muted);
+}
+
+.custom-button--outline:hover {
+    color: white;
+    border-color: var(--primary-purple);
+    background: rgba(124, 58, 237, 0.1);
+}
+
+.custom-button--outline::after {
+    display: none;
+}
+
+/* Sizes */
+.custom-button--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+}
+
+.custom-button--small.custom-button--primary,
+.custom-button--small.custom-button--secondary {
+    padding-right: 2rem;
+}
+
+.custom-button--medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+.custom-button--medium.custom-button--primary,
+.custom-button--medium.custom-button--secondary {
+    padding-right: 2.5rem;
+}
+
+.custom-button--large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    border-radius: 14px;
+}
+
+.custom-button--large.custom-button--primary,
+.custom-button--large.custom-button--secondary {
+    padding-right: 3rem;
+}
+
+.custom-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Border rotation animation */
+@keyframes borderRotate {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
