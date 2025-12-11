@@ -85,6 +85,34 @@
     font-weight: 500;
 }
 
+/* Vision Section */
+.vision-section {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+    text-align: center;
+}
+
+.vision-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vision-content h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, #7C3AED 0%, #06b6d4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vision-content p {
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
 /* Values Section */
 .values-section {
     padding: 6rem 0;

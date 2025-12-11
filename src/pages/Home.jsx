@@ -28,6 +28,48 @@ const Home = () => {
                 imageAlt="Diverse engineers working globally"
             />
 
+            {/* About Sunsys Global Section */}
+            <section className="about-section">
+                <div className="container">
+                    <div className="about-grid">
+                        {/* Left: Heading + Content */}
+                        <div className="about-content">
+                            <h2 className="about-title">About Sunsys Global</h2>
+                            <p className="about-description">
+                                Sunsys Global is the international Talent & Workforce Solutions Division of
+                                Sunsys Techsol Pvt. Ltd. We help global companies scale engineering capacity
+                                with elite developers, skilled professionals, and fresh talent — at up to
+                                <strong> 40% lower cost</strong>.
+                            </p>
+                            <p className="about-description">
+                                We also open global career pathways for Indian engineers through remote roles,
+                                international deployments, and startup opportunities.
+                            </p>
+                        </div>
+
+                        {/* Right: Stats Block */}
+                        <div className="about-stats">
+                            <div className="stat-item">
+                                <div className="stat-value">500+</div>
+                                <div className="stat-label">Projects Delivered</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-value">300+</div>
+                                <div className="stat-label">Elite Developers</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-value">50+</div>
+                                <div className="stat-label">Global Clients</div>
+                            </div>
+                            <div className="stat-item">
+                                <div className="stat-value">98%</div>
+                                <div className="stat-label">Success & Retention</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Features Section */}
             <section className="features-section">
                 <div className="container">
@@ -97,8 +139,14 @@ const Home = () => {
                         </div>
 
                         <div className="industry-card">
+                            <div className="industry-icon">🎓</div>
+                            <h3>EdTech</h3>
+                            <p>Educational technology and learning platforms</p>
+                        </div>
+
+                        <div className="industry-card">
                             <div className="industry-icon">🏥</div>
-                            <h3>HealthTech</h3>
+                            <h3>Healthcare Tech</h3>
                             <p>Healthcare innovation and digital solutions</p>
                         </div>
 
@@ -106,6 +154,12 @@ const Home = () => {
                             <div className="industry-icon">🛒</div>
                             <h3>E-Commerce</h3>
                             <p>Powerful online retail experiences</p>
+                        </div>
+
+                        <div className="industry-card">
+                            <div className="industry-icon">🏢</div>
+                            <h3>Enterprise IT</h3>
+                            <p>Enterprise-grade IT solutions and infrastructure</p>
                         </div>
                     </div>
                 </div>
@@ -115,7 +169,7 @@ const Home = () => {
             <section className="cta-section">
                 <div className="container">
                     <div className="cta-content">
-                        <h2>Ready to Transform Your Business?</h2>
+                        <h2>Ready to Accelerate Your Innovation Pipeline?</h2>
                         <p>Join hundreds of companies worldwide who trust Sunsys Global to deliver exceptional engineering talent and innovative solutions.</p>
                         <div className="cta-buttons">
                             <button
