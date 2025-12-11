@@ -17,15 +17,15 @@ const Home = () => {
     return (
         <div className="home-page">
             <HeroSection
-                title="Your Gateway to World-Class Engineering Talent"
-                subtitle="🌍 Global Excellence"
-                description="Partner with Sunsys Global to access elite developers and build scalable, future-proof solutions that transform your business."
-                primaryButtonText="Get Started"
-                secondaryButtonText="Explore Our Services"
+                title="Build World-Class Engineering Teams — Fast, Compliant & Affordable"
+                subtitle="Connecting elite Indian & global tech talent with high-growth companies worldwide."
+                serviceLine="Staffing | Offshore Teams | Talent Deployment | Global Hiring | POSH | L&D"
+                primaryButtonText="Hire Engineering Talent"
+                secondaryButtonText="Apply for Global Roles"
                 primaryButtonAction={handleGetStarted}
                 secondaryButtonAction={handleBrowseTalent}
-                imageSrc="https://illustrations.popsy.co/blue/remote-work.svg"
-                imageAlt="Global team collaboration"
+                imageSrc="/hero-engineers.png"
+                imageAlt="Diverse engineers working globally"
             />
 
             {/* Features Section */}

@@ -6,33 +6,39 @@ const HeroSection = ({
     title,
     subtitle,
     description,
+    serviceLine,
     primaryButtonText,
     secondaryButtonText,
     primaryButtonAction,
     secondaryButtonAction,
     imageSrc,
     imageAlt = 'Hero illustration',
-    showStats = true
+    showTrustBadges = true
 }) => {
-    const stats = [
-        { value: '500+', label: 'Projects Delivered' },
-        { value: '50+', label: 'Happy Clients' },
-        { value: '98%', label: 'Success Rate' },
-        { value: '24/7', label: 'Support' }
+    const trustBadges = [
+        { icon: '✔', text: 'Trusted by Global Startups' },
+        { icon: '✔', text: 'PAN-India Networks' },
+        { icon: '✔', text: 'IIT/NIT Talent Pool' }
     ];
 
     return (
         <section className="hero-section">
             <div className="hero-section__container container">
                 <div className="hero-section__content">
+                    {/* LEFT SIDE - Text Block */}
                     <div className="hero-section__text fade-in">
+                        <h1 className="hero-section__title">{title}</h1>
+
                         {subtitle && (
                             <p className="hero-section__subtitle">{subtitle}</p>
                         )}
-                        <h1 className="hero-section__title">{title}</h1>
-                        {description && (
-                            <p className="hero-section__description">{description}</p>
+
+                        {serviceLine && (
+                            <div className="hero-section__service-line">
+                                {serviceLine}
+                            </div>
                         )}
+
                         <div className="hero-section__buttons">
                             {primaryButtonText && (
                                 <Button
@@ -54,19 +60,20 @@ const HeroSection = ({
                             )}
                         </div>
 
-                        {/* Stats Section */}
-                        {showStats && (
-                            <div className="hero-section__stats">
-                                {stats.map((stat, index) => (
-                                    <div key={index} className="hero-section__stat">
-                                        <div className="hero-section__stat-value">{stat.value}</div>
-                                        <div className="hero-section__stat-label">{stat.label}</div>
+                        {/* Trust Badges */}
+                        {showTrustBadges && (
+                            <div className="hero-section__trust-badges">
+                                {trustBadges.map((badge, index) => (
+                                    <div key={index} className="trust-badge">
+                                        <span className="trust-badge__icon">{badge.icon}</span>
+                                        <span className="trust-badge__text">{badge.text}</span>
                                     </div>
                                 ))}
                             </div>
                         )}
                     </div>
 
+                    {/* RIGHT SIDE - Visual Block */}
                     {imageSrc && (
                         <div className="hero-section__image-wrapper">
                             <div className="hero-section__image float-animation">
